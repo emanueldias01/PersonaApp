@@ -1,4 +1,4 @@
-import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import me from '../../assets/me.png';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -24,7 +24,7 @@ export default function Home(){
     }
 
     return(
-        <View style={styles.containerHome}>
+        <ScrollView contentContainerStyle={styles.containerHome}>
 
 
             
@@ -47,7 +47,7 @@ export default function Home(){
             <Pressable style={styles.pressSkills}>
                 <Text>Skills</Text>
             </Pressable>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         gap: 30,
-        paddingTop: 220
     },
     image: {
         resizeMode: 'contain',
@@ -81,7 +80,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         paddingHorizontal: 40,
         paddingVertical: 10,
-        marginTop: 70
+        marginTop: 50
+        
     },
     text: {
         color: 'white',
