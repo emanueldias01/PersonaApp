@@ -1,26 +1,45 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
 import me from '../../assets/me.png';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
+
 export default function Home(){
+
+    const handleLinkedin = () => {
+        Linking.openURL('https://www.linkedin.com/in/emanueldias01/');
+    }
+
+    const handleGitHub = () => {
+        Linking.openURL('https://github.com/emanueldias01');
+    }
+
+    const handleEmail = () => {
+        const email = 'emanueldias01dev@gmail.com';
+        const assunto = 'Hello World!';
+        const corpo = 'Olá, estou entrando em contato...';
+        const url = `mailto:${email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+
+        Linking.openURL(url);
+    }
 
     return(
         <View style={styles.containerHome}>
 
+
             
             <Image style={styles.image} source={me}/>
-            <Pressable style={[styles.pressSocial, {backgroundColor: '#0A66C2'}]}>
+            <Pressable style={[styles.pressSocial, {backgroundColor: '#0A66C2'}]} onPress={handleLinkedin}>
                 <Text style={styles.text}>Linkedin</Text>
                 <AntDesign name="linkedin-square" size={24} color="white" />
             </Pressable>
 
-            <Pressable  style={[styles.pressSocial, {backgroundColor: 'black'}]}>
+            <Pressable  style={[styles.pressSocial, {backgroundColor: 'black'}]} onPress={handleGitHub}>
                 <Text style={styles.text}>GitHub</Text>
                 <AntDesign name="github" size={24} color="white" />
             </Pressable>
 
-            <Pressable  style={[styles.pressSocial, {backgroundColor: '#D93025'}]}>
+            <Pressable  style={[styles.pressSocial, {backgroundColor: '#D93025'}]} onPress={handleEmail}>
                 <Text style={styles.text}>Gmail</Text>
                 <MaterialCommunityIcons name="gmail" size={24} color="white" />
             </Pressable>
