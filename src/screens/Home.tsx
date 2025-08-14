@@ -1,10 +1,10 @@
-import { Image, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, Linking, Pressable, ScrollView, StyleSheet, Text } from "react-native";
 import me from '../../assets/me.png';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
-export default function Home(){
+export default function Home({navigation} : any){
 
     const handleLinkedin = () => {
         Linking.openURL('https://www.linkedin.com/in/emanueldias01/');
@@ -21,6 +21,10 @@ export default function Home(){
         const url = `mailto:${email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 
         Linking.openURL(url);
+    }
+
+    const navigateSkills = () => {
+        navigation.navigate('Skills');
     }
 
     return(
@@ -44,7 +48,7 @@ export default function Home(){
                 <MaterialCommunityIcons name="gmail" size={24} color="white" />
             </Pressable>
 
-            <Pressable style={styles.pressSkills}>
+            <Pressable style={styles.pressSkills} onPress={navigateSkills}>
                 <Text>Skills</Text>
             </Pressable>
         </ScrollView>
