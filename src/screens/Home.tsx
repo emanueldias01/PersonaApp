@@ -30,7 +30,11 @@ export default function Home({navigation} : any){
     return(
         <ScrollView contentContainerStyle={styles.containerHome}>
 
-
+            <Text style={styles.greeting}>Hello! 👋</Text>
+            <Text style={styles.name}>I'm <Text style={styles.highlight}>Emanuel Dias 💻</Text></Text>
+            <Text style={styles.description}>
+                I'm a <Text style={styles.highlight}>Backend Developer</Text> exploring the world of <Text style={styles.mobile}>Mobile Development 📱</Text>
+            </Text>
             
             <Image style={styles.image} source={me}/>
             <Pressable style={[styles.pressSocial, {backgroundColor: '#0A66C2'}]} onPress={handleLinkedin}>
@@ -60,7 +64,34 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 30,
+        gap: 20,
+    },
+    greeting: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#4B9CD3",
+    marginBottom: 8,
+    },
+    name: {
+        fontSize: 24,
+        fontWeight: "600",
+        color: "#333",
+        marginBottom: 8,
+    },
+    highlight: {
+        color: "#4B9CD3",
+        fontWeight: "bold",
+    },
+    mobile: {
+        color: "#27ae60",
+        fontWeight: "bold",
+    },
+    description: {
+        fontSize: 18,
+        textAlign: "center",
+        color: "#555",
+        lineHeight: 26,
+        maxWidth: 300,
     },
     image: {
         resizeMode: 'contain',

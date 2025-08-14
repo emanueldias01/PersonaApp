@@ -3,16 +3,16 @@ import { StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 type SkillsData = {
-  Tecnologias: string[];
-  "Arquitetura / Padrões": string[];
+  Technologies: string[];
+  "Architectures / Patterns": string[];
   "Soft Skills": string[];
 };
 
 export default function Skills() {
   const skillsData: SkillsData = {
-    Tecnologias: ["Java", "Spring", "Golang", "Typescript", "Javascript", "Express"],
-    "Arquitetura / Padrões": ["MVC", "REST", "Microservices", "Clean Architecture", "SOLID"],
-    "Soft Skills": ["Comunicação", "Trabalho em equipe", "Resolução de problemas", "Pensamento crítico"],
+    Technologies: ["Java", "Spring", "Golang", "Typescript", "Javascript", "Express"],
+    "Architectures / Patterns": ["MVC", "REST", "Microservices", "Clean Architecture", "SOLID"],
+    "Soft Skills": ["Communication", "Teamwork", "Problem Solving", "Critical Thinking"],
   };
 
   // Cria uma array tipada das chaves
@@ -20,7 +20,7 @@ export default function Skills() {
 
   return (
     <ScrollView contentContainerStyle={styles.containerContent}>
-      <Text style={styles.title}>Minhas Skills</Text>
+      <Text style={styles.title}>My Skills</Text>
       {categories.map((category) => (
         <View key={category} style={styles.categoryContainer}>
           <Text style={styles.categoryTitle}>{category}</Text>
